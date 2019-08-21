@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="parentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane fx:id="splitPane" dividerPositions="0.2733668341708543" layoutY="30.0" prefHeight="579.0" prefWidth="997.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <items>
+          <AnchorPane fx:id="leftPane" minHeight="100.0" minWidth="0.0" prefHeight="577.0" prefWidth="100.0" style="-fx-background-color: #dff0d8;">
+               <children>
+                  <Button fx:id="btnRemoveAll" layoutX="78.0" layoutY="402.0" mnemonicParsing="false" onAction="#removeAll" text="Remove All" />
+                  <VBox layoutX="9.0" layoutY="51.0" prefHeight="319.0" prefWidth="257.0">
+                     <children>
+                        <RadioButton fx:id="rbVertex" mnemonicParsing="false" onAction="#handleVertexPress" text="Add / Move Vertex">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="group1" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="rbVertexCustomText" mnemonicParsing="false" onAction="#handleVertexCustomTextPress" text="Add / Move Vertex Custom Text" toggleGroup="$group1">
+                        </RadioButton>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="rbEdge" mnemonicParsing="false" onAction="#handleEdgePress" text="Add Edge" toggleGroup="$group1" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="rbVertexIcon" mnemonicParsing="false" onAction="#handleVertexIconPress" text="Intermediate Point" toggleGroup="$group1" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="rbRemoveObj" mnemonicParsing="false" onAction="#handleRemoveObjPress" text="Remove Object" toggleGroup="$group1" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="rbChangeLbl" mnemonicParsing="false" onAction="#handleChangeLabelPress" text="Change Label" toggleGroup="$group1" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="rbMoveLbl" mnemonicParsing="false" onAction="#handleMoveLabelPress" text="Move Label" toggleGroup="$group1" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="formEdge" mnemonicParsing="false" onAction="#handleFormEdgePress" text="Change form of Edge" toggleGroup="$group1" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <RadioButton fx:id="curveEdge" mnemonicParsing="false" onAction="#handleCurveEdgePress" text="Move Curve Edge" toggleGroup="$group1" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="rightPane" minHeight="0.0" minWidth="0.0" onMouseClicked="#clickMouse" onMouseDragged="#moveMouse" onMousePressed="#pressMouse" onMouseReleased="#releaseMouse" prefHeight="598.0" prefWidth="513.0" style="-fx-background-color: white;" />
+        </items>
+      </SplitPane>
+      <MenuBar fx:id="menuBar" layoutY="-2.0" prefHeight="32.0" prefWidth="997.0">
+        <menus>
+          <Menu fx:id="menu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="itemNew" mnemonicParsing="false" onAction="#onNewPage" text="New" />
+                  <MenuItem fx:id="itemSaveImage" mnemonicParsing="false" onAction="#onDirectorChooserImage" text="Save Image" />
+                  <MenuItem fx:id="itemTikZ" mnemonicParsing="false" onAction="#onDirectorChooserTikZ" text="Export to TikZ" />
+                  <MenuItem fx:id="itemExit" mnemonicParsing="false" onAction="#onExit" text="Exit" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="View">
+              <items>
+                <MenuItem mnemonicParsing="false" text="100%" />
+                  <MenuItem mnemonicParsing="false" text="50%" />
+                  <MenuItem mnemonicParsing="false" text="25%" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
